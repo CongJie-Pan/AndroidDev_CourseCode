@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Game title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:text="剪刀✂️ 石頭🪨 布📜 遊戲"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- User's choice display -->
+    <TextView
+        android:id="@+id/userChoiceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="你選擇："
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <!-- Computer's choice display -->
+    <TextView
+        android:id="@+id/computerChoiceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="電腦選擇："
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userChoiceTextView" />
+
+    <!-- Game result display -->
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="遊戲結果："
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/computerChoiceTextView" />
+
+    <!-- Scissors button -->
+    <Button
+        android:id="@+id/scissorsButton"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="剪刀✂️"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/rockButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+
+    <!-- Rock button -->
+    <Button
+        android:id="@+id/rockButton"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="石頭🪨"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/paperButton"
+        app:layout_constraintStart_toEndOf="@+id/scissorsButton"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+
+    <!-- Paper button -->
+    <Button
+        android:id="@+id/paperButton"
+        android:layout_width="103dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="56dp"
+        android:text="布📜"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rockButton"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+
+    <!-- Layout guideline for alignment -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <!-- Designer information -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="307dp"
+        android:layout_height="49dp"
+        android:gravity="center"
+        android:text="設計者：11144209 資管三乙 潘驄杰"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="16dp"
+    />
+
+    <!-- Play again button -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:text="⏪ 再玩一次吧！"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/paperButton"
+        app:layout_constraintStart_toEndOf="@+id/scissorsButton"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

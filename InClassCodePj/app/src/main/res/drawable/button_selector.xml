@@ -1,0 +1,17 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 按下時的背景顏色 -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#A5B68D"/> <!-- 較深綠色，表示按下狀態 -->
+            <corners android:radius="16dp"/>
+        </shape>
+    </item>
+
+    <!-- 默認狀態下的背景顏色 -->
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#809660"/> <!-- 默認綠色背景 -->
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,153 @@
+MainActivity.kt
+---
+package com.example.rockpaperscissors
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import kotlin.random.Random
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Find views by their IDs
+        val resultTextView = findViewById<TextView>(R.id.resultTextView)
+        val userChoiceTextView = findViewById<TextView>(R.id.userChoiceTextView)
+        val computerChoiceTextView = findViewById<TextView>(R.id.computerChoiceTextView)
+
+        val rockButton = findViewById<Button>(R.id.rockButton)
+        val paperButton = findViewById<Button>(R.id.paperButton)
+        val scissorsButton = findViewById<Button>(R.id.scissorsButton)
+
+        // Set OnClickListeners for the buttons
+        rockButton.setOnClickListener {
+            playGame("Rock", resultTextView, userChoiceTextView, computerChoiceTextView)
+        }
+
+        paperButton.setOnClickListener {
+            playGame("Paper", resultTextView, userChoiceTextView, computerChoiceTextView)
+        }
+
+        scissorsButton.setOnClickListener {
+            playGame("Scissors", resultTextView, userChoiceTextView, computerChoiceTextView)
+        }
+    }
+
+    // Function to play the game
+    private fun playGame(userChoice: String, resultTextView: TextView, userChoiceTextView: TextView, computerChoiceTextView: TextView) {
+        val computerChoice = getComputerChoice()
+        userChoiceTextView.text = "You chose: $userChoice"
+        computerChoiceTextView.text = "Computer chose: $computerChoice"
+
+        when {
+            userChoice == computerChoice -> resultTextView.text = "It's a tie!"
+            (userChoice == "Rock" && computerChoice == "Scissors") ||
+            (userChoice == "Scissors" && computerChoice == "Paper") ||
+            (userChoice == "Paper" && computerChoice == "Rock") -> resultTextView.text = "You win!"
+            else -> resultTextView.text = "You lose!"
+        }
+    }
+
+    // Function to randomly generate the computer's choice
+    private fun getComputerChoice(): String {
+        val choices = arrayOf("Rock", "Paper", "Scissors")
+        return choices[Random.nextInt(choices.size)]
+    }
+}
+---
+activity_main.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rock, Paper, Scissors Game"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- User Choice -->
+    <TextView
+        android:id="@+id/userChoiceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You chose: "
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <!-- Computer Choice -->
+    <TextView
+        android:id="@+id/computerChoiceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Computer chose: "
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/userChoiceTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Result -->
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result: "
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/computerChoiceTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Buttons for Rock, Paper, Scissors -->
+    <Button
+        android:id="@+id/rockButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rock"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"/>
+
+    <Button
+        android:id="@+id/paperButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paper"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
+        app:layout_constraintLeft_toRightOf="@+id/rockButton"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/scissorsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scissors"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
+        app:layout_constraintLeft_toRightOf="@+id/paperButton"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
