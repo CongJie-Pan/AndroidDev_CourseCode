@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Game title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="撲克牌比大小遊戲"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Player name input -->
+    <TextView
+        android:id="@+id/playerNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="請輸入玩家姓名"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/playerNameInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="輸入玩家姓名"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
+
+    <!-- Game mode selection -->
+    <TextView
+        android:id="@+id/modeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="模式"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <RadioGroup
+        android:id="@+id/modeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/modeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <RadioButton
+            android:id="@+id/modeBig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="比大"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/modeSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="比小" />
+    </RadioGroup>
+
+    <!-- Start Button -->
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="開始抽牌"
+        app:layout_constraintTop_toBottomOf="@+id/modeGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Player and computer card display -->
+    <TextView
+        android:id="@+id/playerCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="玩家的牌: ..."
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/startButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp" />
+
+    <TextView
+        android:id="@+id/computerCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="電腦的牌: ..."
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/playerCard"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp" />
+
+    <!-- Result display -->
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="勝利者: ..."
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/computerCard"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp" />
+
+    <!-- Designer information -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="307dp"
+        android:layout_height="49dp"
+        android:gravity="center"
+        android:text="設計者：11144209 資管三乙 潘驄杰"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
