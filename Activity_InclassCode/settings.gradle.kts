@@ -19,9 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Inclass_Calculator"
+rootProject.name = "Activity_InclassCode"
 include(":app")
-include(":app")
-include(":app")
-include(":app")
- 
