@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <!-- User Input Text Field -->
+    <EditText
+        android:id="@+id/et_user_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="請輸入您的名字"
+        android:textSize="18sp"/>
+
+    <!-- Default Toast Button -->
+    <Button
+        android:id="@+id/btn_Toast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="預設Toast"
+        android:textSize="30sp"
+        android:backgroundTint="#6200EE"/>
+
+    <!-- Custom Toast Button -->
+    <Button
+        android:id="@+id/btn_Custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="自訂Toast"
+        android:textSize="30sp"
+        android:backgroundTint="#6200EE"/>
+
+    <!-- Snackbar Button -->
+    <Button
+        android:id="@+id/btn_Snackbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="按鈕式Snackbar"
+        android:textSize="30sp"
+        android:backgroundTint="#6200EE"/>
+
+    <!-- Show AlertDialog Button -->
+    <Button
+        android:id="@+id/btn_Dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="按鈕式AlertDialog"
+        android:textSize="30sp"
+        android:backgroundTint="#6200EE"/>
+
+    <!-- Clear AlertDialog Button -->
+    <Button
+        android:id="@+id/btn_Dialog2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="清單式AlertDialog"
+        android:textSize="30sp"
+        android:backgroundTint="#6200EE"/>
+
+    <!-- List AlertDialog Button -->
+    <Button
+        android:id="@+id/btn_Dialog3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="單選式AlertDialog"
+        android:textSize="30sp"
+        android:backgroundTint="#6200EE"/>
+
+</LinearLayout>
