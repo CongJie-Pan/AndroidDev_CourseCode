@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">listPj</string>
+    <integer-array name="image_list">
+        <item>@drawable/angry</item>
+        <item>@drawable/confused</item>
+        <item>@drawable/cool</item>
+        <item>@drawable/party</item>
+        <item>@drawable/sad</item>
+        <item>@drawable/smile</item>
+        <item>@drawable/star</item>
+        <item>@drawable/peach</item>
+        <item>@drawable/pineapple</item>
+        <item>@drawable/strawberry</item>
+        <item>@drawable/tomato</item>
+    </integer-array>
+</resources>
