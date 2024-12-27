@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.listpj.R
 
+/* 原始內容 */
+/*
 class MyAdapter(
     context: Context,
     private val layout: Int,
@@ -26,4 +28,25 @@ class MyAdapter(
         return view
     }
 }
+*/
 
+/* 小考內容 */
+class MyAdapter(
+    context: Context,
+    private val layout: Int,
+    data: List<item>
+) : ArrayAdapter<item>(context, layout, data) {
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val view = convertView ?: View.inflate(parent.context, layout, null)
+        val item = getItem(position) ?: return view
+
+        val photo = view.findViewById<ImageView>(R.id.imgPhoto)
+        photo.setImageResource(item.photo)
+
+        val tvMsg = view.findViewById<TextView>(R.id.tvMsg)
+        tvMsg.text = item.name
+
+        return view
+    }
+}
